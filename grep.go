@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-const maxCapacity = 1000
+const maxCapacity = 1024 * 2
 
 func check(err error) {
 	if err != nil {
@@ -17,13 +17,19 @@ func check(err error) {
 }
 
 func main() {
-	pattern := os.Args[1]
-	filename := os.Args[2]
+	pattern := string(os.Args[1])
+	if os.Args[2] == "-i" {
+		filename := os.Args[3]
+		pattern = strings.ToLower(pattern)
+		searchInFile(pattern, filename, true)
+	} else {
+		filename := os.Args[2]
+		searchInFile(pattern, filename, false)
+	}
 
-	searchInFile(pattern, filename)
 }
 
-func searchInFile(pattern string, filename string) {
+func searchInFile(pattern string, filename string, ignore bool) {
 	file, err := os.Open(filename)
 	check(err)
 	defer file.Close()
@@ -37,9 +43,14 @@ func searchInFile(pattern string, filename string) {
 
 		line := scanner.Text()
 		tokens := strings.Split(line, "")
+		line1 := line
+		if ignore {
+			line1 = strings.ToLower(line)
+		}
 
 		for i := 0; i <= len(tokens)-len(pattern); i++ {
-			if line[i:i+len(pattern)] == pattern {
+
+			if line1[i:i+len(pattern)] == pattern {
 				fmt.Println(line, "\n")
 				break
 			}
