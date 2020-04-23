@@ -28,7 +28,9 @@ func searchInFile(pattern string, filename string) {
 		tokens := strings.Split(line, "")
 
 		for i := 0; i <= len(tokens)-len(pattern); i++ {
-			fmt.Print(line[i:i+len(pattern)], ",")
+			if line[i:i+len(pattern)] == pattern {
+				fmt.Println(line)
+			}
 		}
 
 	}
