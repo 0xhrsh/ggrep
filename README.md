@@ -8,27 +8,30 @@ Requirements:
 - Golang 1.14
 
 Compilation (not necessary):
-- go build ggrep.go
+```
+   $ go build ggrep.go
+```
 
 
 Procedure:
+
 - Clone the Repository
 ```
-    git clone https://bitbucket.org/harsh-not-haarsh/ggrep/src/master/
+   $ git clone https://bitbucket.org/harsh-not-haarsh/ggrep/src/master/
 ```
 - Navigate to the Repository
 ```
-    cd ggrep
+   $ cd ggrep
 ```
 
 ### Running:
 
 - Search for pattern 
 ```
-    ggrep "pattern to be searched" file_name.txt
+   $ ggrep "pattern to be searched" file_name.txt
 ```
 
 - Search for pattern (Case Independent)
 ```
-    ggrep "pattern to be searched" -i file_name.txt
+   $ ggrep "pattern to be searched" -i file_name.txt
 ```
