@@ -17,7 +17,7 @@ Procedure:
 
 - Clone the Repository
 ```
-   $ git clone https://bitbucket.org/harsh-not-haarsh/ggrep/src/master/
+   $ git clone https://github.com/harsh-not-haarsh/ggrep
 ```
 - Navigate to the Repository
 ```
