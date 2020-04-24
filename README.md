@@ -1,4 +1,4 @@
-# ggrep
+# GGREP
 Grep like utility made in Golang
 
 
@@ -16,9 +16,9 @@ Procedure:
 ```
     git clone https://bitbucket.org/harsh-not-haarsh/ggrep/src/master/
 ```
-- Navigate to the Rpository
+- Navigate to the Repository
 ```
-    cd go
+    cd ggrep
 ```
 
 ### Running:
