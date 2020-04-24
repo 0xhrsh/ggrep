@@ -26,7 +26,6 @@ func main() {
 		filename := os.Args[2]
 		searchInFile(pattern, filename, false)
 	}
-
 }
 
 func searchInFile(pattern string, filename string, ignore bool) {
@@ -44,12 +43,12 @@ func searchInFile(pattern string, filename string, ignore bool) {
 		line := scanner.Text()
 		tokens := strings.Split(line, "")
 		line1 := line
+
 		if ignore {
 			line1 = strings.ToLower(line)
 		}
 
 		for i := 0; i <= len(tokens)-len(pattern); i++ {
-
 			if line1[i:i+len(pattern)] == pattern {
 				fmt.Println(line, "\n")
 				break
